@@ -1,0 +1,103 @@
+/* .parent{
+    display: grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: auto;
+    background-color: blueviolet;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.child{
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    align-items:center;
+}
+.header{
+    grid-column-start: 4;
+    grid-column-end:1;
+    background-color: aliceblue;
+}
+.main{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: whitesmoke
+}
+.menu{
+    grid-column-start: 2;
+    /* grid-column-end: ; */
+    /* background-color: yellow; */
+/* } */
+/* .right{
+    background-color: blue;
+}
+
+.fotter{
+    grid-column-start: 2;
+    grid-column-end:4;
+    background-color: green;
+} */
+/*
+.parent{
+        display: grid;
+        grid-template-columns: repeat(aut-fit,minmax(100px,1fx));
+}
+.child{
+    background-color: blueviolet;
+    display: flex;
+    border: 1px solid red;
+
+    min-height: 50px;
+    max-height: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+.grid{
+    position: relative;
+    background-color: chartreuse;
+
+}
+.sticky{ 
+    background-color: greenyellow;
+} */
+/* button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px 30px;
+    font-size: medium;
+    border: 0;
+    border-radius: 8px;
+    transition-property:scale;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+
+}*/
+button:hover{
+    background-color: crimson;
+    color: aliceblue;
+    scale:2;
+} 
+button{
+    scale: 2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    animation-name: button-animation-type-1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+}
+@keyframes  button-animation-type-1{
+    from{
+        top: 20px;
+        left: 40px;
+    }
+    to{
+        top: 200px;
+        left: 400px;
+    }
+}

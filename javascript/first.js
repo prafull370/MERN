@@ -20,7 +20,7 @@
 //     else{
 //         console.log(a);
 //     }
-// }
+ // }
 // n("sahil SSP of kietian");
 // n(5)
 //funnc declaration

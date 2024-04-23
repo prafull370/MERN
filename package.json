@@ -5,11 +5,12 @@
   "main": "DAY6.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon DAY7"
+    "start": "nodemon Expindex.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "figlet": "^1.7.0",
     "kill-port": "^2.0.1",
     "nodemon": "^3.1.0"

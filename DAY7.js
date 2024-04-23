@@ -1,13 +1,15 @@
 // const fs=require('fs')
 //  const data =fs.readFileSync('./read7.txt',{encoding:'utf8'});// utf 8 use
 //  console.log(data);
+
+ 
 // // console.log()/
 
 // //buffer.js
 // const b=new Buffer.from('abcdfsadf');
 // console.log(b.toString());
 // b.write('other');
-// console.log(b.toString());
+// conso le.log(b.toString());
 
 //file sync api
 
@@ -42,29 +44,35 @@
 //     console.log(data)
 // })
 
-//http module
+//http module(mini project)
 
 const http = require('http');
-const htmlTemplate = `
-<!DOCTYPE HTML>
-<html>
-<head>
-</head>
-<body>
-<p>hello ji shoo</p>
-</body>
-</html>
-`
+const fs = require('fs')
 
-const cardTemplate = `
-<div class="product-card">
-<h4>Title</h4>
-<p> ifo</p>
-</div>
-`
+const data = fs.readFileSync('./data.json', 'utf8');
+// console.log(data);
+const dataObj = JSON.parse(data);
+const products = dataObj.products;
 
-const card1 = cardTemplate.replace('Title', 'Xiomi Note 10')
-const page = htmlTemplate.replace('product-card',card1)
+const htmlTemplate = fs.readFileSync('./page.html', 'utf8');
+
+const cardTemplate = fs.readFileSync('./card7.html', 'utf8');
+
+const card1 = cardTemplate
+.replace('Title', products[0].title)
+.replace('Info', products[0].description);
+
+const card2 = cardTemplate.replace('Title', 'Apple 15pro')
+const allCard = products.map((elem) => {
+    let newCard = cardTemplate;
+
+    newCard = newCard.replace('Title', elem.title);
+    newCard = newCard.replace('Title', elem.title);
+    return newCard;
+})
+
+const allCardS = allCard.join(' ');
+const page = htmlTemplate.replace('product-card', allCardS.join(''))
 // const page="hello"
 const app = http.createServer((req, res) => {
     console.log("Received")
@@ -74,11 +82,7 @@ const app = http.createServer((req, res) => {
     })
     res.end(page)
 })
-// app.listen(1400);
 
 app.listen(1400, () => {
     console.log('server started')
 })
-
-
-//http://localhost:1400

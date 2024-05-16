@@ -16,7 +16,7 @@ function renderUI(data){
     const articles = data.articles;
     
     for(let i=0;i<articles.length;i++){
-        const root=document.getElementById("root");
+        const root = document.getElementById("root");
         const ar=articles[i];
         console.log(ar);
 
